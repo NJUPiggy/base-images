@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'fluentd/**'
+    - '.github/workflows/fluentd-ci.yml'
 
 jobs:
   build:
