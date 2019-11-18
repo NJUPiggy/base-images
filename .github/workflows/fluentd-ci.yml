@@ -20,3 +20,4 @@ jobs:
         registry: registry.cn-hangzhou.aliyuncs.com
         username: ${{secrets.Ali_USER}}
         password: ${{secrets.Ali_PWD}}
+        workdir: ./fluentd
