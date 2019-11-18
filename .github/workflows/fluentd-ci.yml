@@ -1,0 +1,21 @@
+name: Fluentd CI
+
+on:
+  push:
+    paths:
+    - 'fluentd/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Build & Push Docker Image
+      uses: elgohr/Publish-Docker-Github-Action@2.8
+      with:
+        name: shenmiu/fluentd:latest
+        registry: registry.cn-hangzhou.aliyuncs.com
+        username: ${{secrets.Ali_USER}}
+        password: ${{secrets.Ali_PWD}}
